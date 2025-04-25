@@ -5,12 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CodeTiny 블로그</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Pretendard', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: var(--sidebar-bg, #fff);
+      border-right: 1px solid #ddd;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-nav a {
+      display: block;
+      margin: 0.75rem 0;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .sidebar-nav a:hover {
+      color: var(--accent);
+    }
+
+    .sidebar-profile {
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
-  <h1 style="text-align: center; margin-top: 2rem;">CodeTiny 블로그 ✍️</h1>
-  <section class="post-list">
-    
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>CodeTiny</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="#">🗂 Archive</a>
+        <a href="#">📄 About</a>
+        <a href="#">🔍 Search</a>
+      </nav>
+      <div class="sidebar-profile">
+        <img src="https://via.placeholder.com/80" alt="Profile Image" class="profile-img" />
+      </div>
+    </aside>
+
+    <main class="content">
+      <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
+      <h1 style="text-align: center; margin-top: 2rem;">CodeTiny 블로그 ✍️</h1>
+      <section class="post-list">
+        
   <div class="post-card">
     <a href="*.html" style="text-decoration:none; color:inherit;">
       <div class="post-meta">2025-04-25 · #블로그 #Stack #감성</div>
@@ -27,8 +101,9 @@
     </a>
   </div>
   
-  </section>
-
+      </section>
+    </main>
+  </div>
   <script src="toggle.js"></script>
 </body>
 </html>
