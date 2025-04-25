@@ -1,93 +1,148 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeTiny 블로그</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Pretendard', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-    }
+/* 기본 스타일 */
+body {
+  font-family: 'Segoe UI', 'Pretendard', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
 
-    .layout {
-      display: flex;
-      min-height: 100vh;
-    }
+:root {
+  --bg: #f9f9fb;
+  --text: #111;
+  --link: #3333ee;
+  --accent: #4a6df3;
+}
 
-    .sidebar {
-      width: 220px;
-      background: var(--sidebar-bg, #fff);
-      border-right: 1px solid #ddd;
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.dark {
+  --bg: #111;
+  --text: #f9f9fb;
+  --link: #9999ff;
+  --accent: #9bb1ff;
+}
 
-    .sidebar-header h2 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
+.theme-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
 
-    .sidebar-nav a {
-      display: block;
-      margin: 0.75rem 0;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
+/* 전체 레이아웃 */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
 
-    .sidebar-nav a:hover {
-      color: var(--accent);
-    }
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg, #fff);
+  border-right: 1px solid #ddd;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-    .sidebar-profile {
-      text-align: center;
-    }
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-    .profile-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-    }
+.sidebar-nav a {
+  display: block;
+  margin: 0.75rem 0;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
 
-    .content {
-      flex-grow: 1;
-      padding: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h2>CodeTiny</h2>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="index.html">🏠 Home</a>
-        <a href="#">🗂 Archive</a>
-        <a href="#">📄 About</a>
-        <a href="#">🔍 Search</a>
-      </nav>
-      <div class="sidebar-profile">
-        <img src="https://via.placeholder.com/80" alt="Profile Image" class="profile-img" />
-      </div>
-    </aside>
+.sidebar-nav a:hover {
+  color: var(--accent);
+}
 
-    <main class="content">
-      <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
-      <h1 style="text-align: center; margin-top: 2rem;">CodeTiny 블로그 ✍️</h1>
-      <section class="post-list">
-        {{posts}}
-      </section>
-    </main>
-  </div>
-  <script src="toggle.js"></script>
-</body>
-</html>
+.sidebar-profile {
+  text-align: center;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem 3rem;
+}
+
+/* 블로그 홈 카드 리스트 */
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
+.post-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.post-card p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* 글 상세 페이지 */
+.post-container {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.7;
+}
+
+.post-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+
+article h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
