@@ -1,3 +1,6 @@
+/*
+.md 파일을 html 파일로 파싱하기 위한 기능
+*/
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
