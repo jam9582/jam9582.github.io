@@ -28,10 +28,10 @@ fs.readdirSync(postsDir).forEach((filename) => {
   // 카드형 포스트 HTML 생성
   const cardHtml = `
   <div class="post-card">
-    <a href="\${slug}.html" style="text-decoration:none; color:inherit;">
-      <div class="post-meta">\${data.date || ''} · \${(data.tags || []).map(tag => '#' + tag).join(' ')}</div>
-      <h3>\${data.title || slug}</h3>
-      <p>\${data.summary || ''}</p>
+    <a href="${slug}.html" style="text-decoration:none; color:inherit;">
+      <div class="post-meta">${data.date || ''} · ${(data.tags || []).map(tag => '#' + tag).join(' ')}</div>
+      <h3>${data.title || slug}</h3>
+      <p>${data.summary || ''}</p>
     </a>
   </div>
   `;
