@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>hello</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hello</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Markdown 블로그 만들기!</h1>
+  <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
+  <main style="max-width: 700px; margin: 4rem auto; padding: 0 1rem;">
+    <h1>{{title}}</h1>
+    <article>
+      <h1>Markdown 블로그 만들기!</h1>
 <ul>
 <li><p>내 블로그를 만들어가고 있어.</p>
 </li>
@@ -13,5 +19,8 @@
 </li>
 </ul>
 
+    </article>
+  </main>
+  <script src="toggle.js"></script>
 </body>
 </html>

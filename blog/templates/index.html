@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>블로그 홈</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeTiny 블로그</title>
+  <link rel="stylesheet" href="../public/style.css" />
 </head>
 <body>
-    <h1>블로그 글 목록</h1>
+  <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
+  <h1 style="text-align: center; margin-top: 2rem;">CodeTiny 블로그 ✍️</h1>
+  <section class="post-list">
     {{posts}}
+  </section>
+
+  <script src="../public/toggle.js"></script>
 </body>
 </html>
