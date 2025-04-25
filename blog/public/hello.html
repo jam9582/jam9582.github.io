@@ -8,39 +8,55 @@
   <style>
     .post-container {
       max-width: 720px;
-      margin: 4rem auto;
+      margin: 5rem auto;
       padding: 0 1.5rem;
-      line-height: 1.7;
-    }
-
-    .post-container h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
 
     .post-meta {
       font-size: 0.9rem;
       color: var(--accent);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
     }
 
     article img {
+      display: block;
+      margin: 2rem auto;
       max-width: 100%;
       border-radius: 10px;
-      margin: 1.5rem 0;
     }
 
     article h2 {
-      margin-top: 2rem;
-      font-size: 1.5rem;
+      margin-top: 2.5rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    article ul {
+      padding-left: 1.5rem;
+    }
+
+    article code {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Menlo', monospace;
     }
   </style>
 </head>
 <body>
   <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
   <main class="post-container">
-    <h1>hello</h1>
     <p class="post-meta"> · </p>
+    <h1 class="post-title">hello</h1>
     <article>
       <h1>Markdown 블로그 만들기!</h1>
 <ul>
