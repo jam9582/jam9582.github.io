@@ -4,26 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CodeTiny 블로그</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../public/style.css" />
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar">
-      <h2 class="sidebar-title">CodeTiny</h2>
-      <nav class="menu">
-        <a href="#">🏠 Home</a>
-        <a href="#">🗂️ Archive</a>
-        <a href="#">📄 About</a>
-        <a href="#">🔍 Search</a>
-      </nav>
-      <div class="profile">
-        <img src="../public/black bear.jpeg" alt="Profile Image" />
+      <div>
+        <div class="sidebar-header">
+          <h2>CodeTiny</h2>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#">🏠 Home</a>
+          <a href="#">📂 Archive</a>
+          <a href="#">📄 About</a>
+          <a href="#">🔍 Search</a>
+        </nav>
+      </div>
+      <div class="sidebar-profile">
+        <img src="../public/profile.jpeg" alt="Profile Image" class="profile-img" />
       </div>
     </aside>
-
     <main class="content">
       <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
-      <h1>CodeTiny 블로그 ✍️</h1>
+      <h1 style="text-align: center; margin-top: 2rem;">CodeTiny 블로그 ✍️</h1>
       <section class="post-list">
         
   <div class="post-card">
@@ -45,7 +48,6 @@
       </section>
     </main>
   </div>
-
-  <script src="toggle.js"></script>
+  <script src="../public/toggle.js"></script>
 </body>
 </html>
