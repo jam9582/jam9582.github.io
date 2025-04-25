@@ -8,12 +8,15 @@
 </head>
 <body>
   <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
-  <main style="max-width: 700px; margin: 4rem auto; padding: 0 1rem;">
+
+  <main class="main" style="max-width: 720px; margin: 4rem auto; padding: 0 1rem;">
     <h1>{{title}}</h1>
+    <p class="post-meta">{{date}} · {{tags}}</p>
     <article>
       {{content}}
     </article>
   </main>
+
   <script src="toggle.js"></script>
 </body>
 </html>
