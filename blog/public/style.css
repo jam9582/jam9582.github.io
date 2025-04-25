@@ -12,13 +12,15 @@ body {
   --text: #111;
   --link: #3333ee;
   --accent: #4a6df3;
+  --card-bg: #fff;
 }
 
 .dark {
   --bg: #111;
   --text: #f9f9fb;
-  --link: #9999ff;
+  --link: #9bb1ff;
   --accent: #9bb1ff;
+  --card-bg: #1a1a1a;
 }
 
 .theme-toggle {
@@ -39,7 +41,7 @@ body {
 
 .sidebar {
   width: 220px;
-  background: var(--sidebar-bg, #fff);
+  background: var(--bg);
   border-right: 1px solid #ddd;
   padding: 2rem 1rem;
   display: flex;
@@ -89,11 +91,12 @@ body {
 }
 
 .post-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
   transition: transform 0.2s ease;
+  color: var(--text);
 }
 
 .post-card:hover {
@@ -109,6 +112,7 @@ body {
 .post-card h3 {
   margin: 0.5rem 0;
   font-size: 1.2rem;
+  color: var(--text);
 }
 
 .post-card p {
