@@ -1,20 +1,3 @@
-/* 기본 스타일 */
-:root {
-  --bg: #f9f9fb;
-  --text: #111;
-  --link: #3333ee;
-  --accent: #4a6df3;
-  --card-bg: #fff;
-}
-
-.dark {
-  --bg: #111;
-  --text: #f9f9fb;
-  --link: #9bb1ff;
-  --accent: #9bb1ff;
-  --card-bg: #1a1a1a;
-}
-
 body {
   font-family: 'Segoe UI', 'Pretendard', sans-serif;
   background: var(--bg);
@@ -23,7 +6,24 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* 다크모드 토글 버튼 */
+:root {
+  --bg: #f9f9fb;
+  --text: #111;
+  --link: #3333ee;
+  --accent: #4a6df3;
+  --card-bg: #fff;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #111;
+  --text: #f9f9fb;
+  --link: #9bb1ff;
+  --accent: #9bb1ff;
+  --card-bg: #1a1a1a;
+  --border: #333;
+}
+
 .theme-toggle {
   position: absolute;
   right: 1rem;
@@ -34,7 +34,6 @@ body {
   cursor: pointer;
 }
 
-/* 전체 레이아웃 */
 .layout {
   display: flex;
   min-height: 100vh;
@@ -43,7 +42,7 @@ body {
 .sidebar {
   width: 220px;
   background: var(--bg);
-  border-right: 1px solid #ddd;
+  border-right: 1px solid var(--border);
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -54,7 +53,6 @@ body {
 .sidebar-header h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: var(--text);
 }
 
 .sidebar-nav a {
@@ -69,12 +67,11 @@ body {
   color: var(--accent);
 }
 
-/* 프로필 이미지 */
 .sidebar-profile {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .profile-img {
@@ -82,17 +79,15 @@ body {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--border);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
 }
 
-/* 메인 컨텐츠 영역 */
 .content {
   flex-grow: 1;
   padding: 2rem 3rem;
 }
 
-/* 블로그 글 목록 카드 */
 .post-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -131,19 +126,16 @@ body {
   line-height: 1.5;
 }
 
-/* 글 상세 페이지 */
 .post-container {
   max-width: 720px;
   margin: 4rem auto;
   padding: 0 1.5rem;
-  line-height: 1.8;
-  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .post-container h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: var(--text);
 }
 
 article img {
@@ -155,8 +147,6 @@ article img {
 article h2 {
   font-size: 1.6rem;
   margin-top: 2rem;
-  font-weight: 600;
-  color: var(--text);
 }
 
 article ul {
@@ -172,18 +162,8 @@ article blockquote {
 }
 
 article code {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0,0,0,0.05);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: 'Menlo', monospace;
-}
-
-/* 링크 */
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
