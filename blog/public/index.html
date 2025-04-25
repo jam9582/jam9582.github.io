@@ -10,7 +10,23 @@
   <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
   <h1 style="text-align: center; margin-top: 2rem;">CodeTiny 블로그 ✍️</h1>
   <section class="post-list">
-    <ul><li><a href="hello.html">hello</a></li></ul>
+    
+  <div class="post-card">
+    <a href="${slug}.html" style="text-decoration:none; color:inherit;">
+      <div class="post-meta">${data.date || ''} · ${(data.tags || []).map(tag => '#' + tag).join(' ')}</div>
+      <h3>${data.title || slug}</h3>
+      <p>${data.summary || ''}</p>
+    </a>
+  </div>
+  
+  <div class="post-card">
+    <a href="${slug}.html" style="text-decoration:none; color:inherit;">
+      <div class="post-meta">${data.date || ''} · ${(data.tags || []).map(tag => '#' + tag).join(' ')}</div>
+      <h3>${data.title || slug}</h3>
+      <p>${data.summary || ''}</p>
+    </a>
+  </div>
+  
   </section>
 
   <script src="../public/toggle.js"></script>
