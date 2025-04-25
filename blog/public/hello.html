@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>hello</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../public/style.css" />
   <style>
-    .post-container {
+    .post-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: var(--bg);
+      border-right: 1px solid #ddd;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar-title {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+
+    .sidebar-nav a {
+      display: block;
+      margin: 0.75rem 0;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .sidebar-profile {
+      text-align: center;
+    }
+
+    .sidebar-profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 3rem;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .post-detail {
       max-width: 720px;
-      margin: 5rem auto;
-      padding: 0 1.5rem;
+      margin: 0 auto;
       line-height: 1.8;
       font-size: 1.05rem;
     }
@@ -23,28 +80,44 @@
     .post-title {
       font-size: 2.2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
       color: var(--text);
     }
 
-    article img {
+    .post-body img {
       display: block;
       margin: 2rem auto;
       max-width: 100%;
       border-radius: 10px;
     }
 
-    article h2 {
+    .post-body h2 {
       margin-top: 2.5rem;
       font-size: 1.6rem;
       font-weight: 600;
     }
 
-    article ul {
+    .post-body ul {
       padding-left: 1.5rem;
     }
 
-    article code {
+    .post-body blockquote {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #666;
+      font-style: italic;
+    }
+
+    .post-body pre {
+      background: #2e2e2e;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .post-body code {
       background-color: rgba(0, 0, 0, 0.05);
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
@@ -52,13 +125,29 @@
     }
   </style>
 </head>
+
 <body>
-  <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
-  <main class="post-container">
-    <p class="post-meta"> · </p>
-    <h1 class="post-title">hello</h1>
-    <article>
-      <h1>Markdown 블로그 만들기!</h1>
+  <div class="post-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-title">CodeTiny</div>
+      <nav class="sidebar-nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="#">📂 Archive</a>
+        <a href="#">📄 About</a>
+        <a href="#">🔍 Search</a>
+      </nav>
+      <div class="sidebar-profile">
+        <img src="../public/black-bear.jpeg" alt="Profile Image" />
+      </div>
+    </aside>
+
+    <main class="content">
+      <button id="theme-toggle" class="theme-toggle">🌙/☀️</button>
+      <article class="post-detail">
+        <p class="post-meta"> · </p>
+        <h1 class="post-title">hello</h1>
+        <div class="post-body">
+          <h1>Markdown 블로그 만들기!</h1>
 <ul>
 <li><p>내 블로그를 만들어가고 있어.</p>
 </li>
@@ -66,8 +155,12 @@
 </li>
 </ul>
 
-    </article>
-  </main>
-  <script src="toggle.js"></script>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <script src="../public/toggle.js"></script>
 </body>
+
 </html>
