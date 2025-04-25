@@ -1,12 +1,4 @@
 /* 기본 스타일 */
-body {
-  font-family: 'Segoe UI', 'Pretendard', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  margin: 0;
-  transition: background 0.3s, color 0.3s;
-}
-
 :root {
   --bg: #f9f9fb;
   --text: #111;
@@ -23,6 +15,15 @@ body {
   --card-bg: #1a1a1a;
 }
 
+body {
+  font-family: 'Segoe UI', 'Pretendard', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* 다크모드 토글 버튼 */
 .theme-toggle {
   position: absolute;
   right: 1rem;
@@ -47,12 +48,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .sidebar-header h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: var(--text);
 }
 
 .sidebar-nav a {
@@ -67,6 +69,7 @@ body {
   color: var(--accent);
 }
 
+/* 프로필 이미지 */
 .sidebar-profile {
   display: flex;
   justify-content: center;
@@ -79,16 +82,17 @@ body {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border-color, #ccc);
+  border: 2px solid var(--accent);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
 }
 
+/* 메인 컨텐츠 영역 */
 .content {
   flex-grow: 1;
   padding: 2rem 3rem;
 }
 
-/* 블로그 홈 카드 리스트 */
+/* 블로그 글 목록 카드 */
 .post-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -132,12 +136,14 @@ body {
   max-width: 720px;
   margin: 4rem auto;
   padding: 0 1.5rem;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 .post-container h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 article img {
@@ -147,12 +153,37 @@ article img {
 }
 
 article h2 {
+  font-size: 1.6rem;
   margin-top: 2rem;
-  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
-.post-meta {
-  font-size: 0.9rem;
-  color: var(--accent);
-  margin-bottom: 2rem;
+article ul {
+  padding-left: 1.5rem;
+}
+
+article blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text);
+  opacity: 0.8;
+  margin: 1.5rem 0;
+}
+
+article code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Menlo', monospace;
+}
+
+/* 링크 */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
