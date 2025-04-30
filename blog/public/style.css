@@ -46,8 +46,11 @@ body {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: var(--text);
+  justify-content: space-between; /* 고정된 레이아웃 */
+  align-items: flex-start; /* 요소 정렬 */
+  position: sticky; /* 스크롤 시 고정 */
+  top: 0; /* 고정 위치 */
+  height: 100vh; /* 전체 높이 */
 }
 
 .sidebar-header h2 {
@@ -75,10 +78,10 @@ body {
 }
 
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 100px; /* 적절한 크기 설정 */
+  height: 100px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover; /* 이미지 비율 유지 */
   border: 2px solid var(--border);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
 }
@@ -166,4 +169,13 @@ article code {
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: 'Menlo', monospace;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
