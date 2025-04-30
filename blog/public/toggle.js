@@ -1,17 +1,14 @@
+const toggle = document.getElementById('theme-toggle');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const body = document.body;
-  const toggleBtn = document.getElementById('theme-toggle');
+// Load theme from localStorage
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  document.body.classList.add('dark');
+}
 
-  // 저장된 테마 불러오기
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    body.classList.add('dark');
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
+// Toggle theme and save to localStorage
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
