@@ -38,6 +38,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.2s;
+  z-index: 1000; /* 버튼이 다른 요소 위에 표시되도록 설정 */
 }
 
 .theme-toggle:hover {
