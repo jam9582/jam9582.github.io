@@ -7,15 +7,25 @@
   {
     date: "2026-11-03",
     title: "결과물 제목",
-    problem: "어떤 문제 상황이었는지",
-    action: "내가 한 일",
-    gained: "이 과정에서 얻은 역량",
+    problem: "어떤 문제나 필요에서 시작했나",
+    action: "내가 맡은 역할과 작업",
+    tech: "쓴 AI 도구와 기술",
+    result: "무엇이 만들어지고 무엇을 배웠나",
     link: "https://github.com/..."
   },
 
   등록된 결과물이 6개보다 적으면 남은 칸은 '준비 중' 카드로 채워집니다.
 */
 const WORKS = [
+  {
+    date: "2026-11-02",
+    title: "품질 직무 포트폴리오 허브",
+    problem: "지원서마다 경험을 따로 정리하다 보니, 제가 원하는 직무와 강점을 한눈에 보여줄 곳이 없었습니다.",
+    action: "첫 화면·소개·역량·결과물·연락으로 구성을 정했습니다. 기존 품질 지원서에서 직무와 이어지는 경험과 숫자만 골랐고, 공개할 정보의 범위도 직접 정했습니다.",
+    tech: "Claude, Claude Code, HTML·CSS·JavaScript, GSAP·Lenis·Lucide, GitHub Pages",
+    result: "PC와 휴대폰 모두에서 보이는 포트폴리오를 배포했습니다. AI에게 맡기기 전에 무엇을 보여줄지 먼저 정해야 결과물이 흔들리지 않는다는 것을 배웠습니다.",
+    link: "https://jam9582.github.io"
+  },
 ];
 
 const MIN_SLOTS = 6;

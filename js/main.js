@@ -31,9 +31,10 @@
 
     const list = el("dl", "work__list");
     list.append(
-      row("문제 상황", work.problem),
+      row("문제", work.problem),
       row("내가 한 일", work.action),
-      row("얻은 역량", work.gained)
+      row("사용 기술", work.tech),
+      row("결과", work.result)
     );
     card.append(list);
 
