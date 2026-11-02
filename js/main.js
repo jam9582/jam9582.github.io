@@ -9,6 +9,13 @@
     return node;
   }
 
+  // Lucide 아이콘 자리 (effects.js 에서 실제 아이콘으로 바뀜)
+  function icon(name) {
+    const i = document.createElement("i");
+    i.setAttribute("data-lucide", name);
+    return i;
+  }
+
   function row(label, value) {
     const wrap = el("div", "work__row");
     wrap.append(el("dt", null, label), el("dd", null, value));
@@ -32,6 +39,7 @@
 
     if (work.link) {
       const a = el("a", "work__link", "자세히 보기");
+      a.append(icon("arrow-up-right"));
       a.href = work.link;
       a.target = "_blank";
       a.rel = "noopener";
@@ -44,7 +52,9 @@
     const card = el("article", "work work--empty");
     const head = el("div", "work__head");
     head.append(el("span", "work__num", String(index + 1).padStart(2, "0")));
-    card.append(head, el("p", "work__soon", "준비 중 · 곧 추가됩니다"));
+    const soon = el("p", "work__soon");
+    soon.append(icon("clock"), "준비 중 · 곧 추가됩니다");
+    card.append(head, soon);
     return card;
   }
 

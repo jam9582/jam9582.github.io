@@ -13,9 +13,9 @@
     link: "https://github.com/..."
   },
 
-  등록된 결과물이 5개보다 적으면 남은 칸은 '준비 중' 카드로 채워집니다.
+  등록된 결과물이 6개보다 적으면 남은 칸은 '준비 중' 카드로 채워집니다.
 */
 const WORKS = [
 ];
 
-const MIN_SLOTS = 5;
+const MIN_SLOTS = 6;
