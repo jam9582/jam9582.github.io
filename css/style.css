@@ -251,28 +251,62 @@ ul, ol { list-style: none; }
 .lead { margin-top: 28px; max-width: 760px; font-size: 1.02rem; }
 
 .method { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.method { counter-reset: step; }
 .method__step {
   position: relative;
-  padding: 20px 20px 20px 72px;
+  overflow: hidden;
+  padding: 22px 20px 20px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fff;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
-.method__key {
+/* 위쪽 그라데이션 띠 */
+.method__step::before {
+  content: "";
   position: absolute;
-  left: 20px;
-  top: 20px;
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--navy-700), var(--blue-500));
-  color: #fff;
-  font-weight: 900;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-500), var(--teal-400));
 }
-.method__name { font-weight: 800; }
-.method__ex { margin-top: 4px; color: var(--ink-soft); font-size: 0.92rem; }
+.method__step:hover {
+  border-color: var(--teal-400);
+  box-shadow: 0 14px 32px rgba(0, 44, 95, 0.12);
+  transform: translateY(-4px);
+}
+.method__head { position: relative; display: flex; align-items: baseline; gap: 10px; }
+.method__key {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--navy-700) 10%, var(--blue-500) 55%, var(--teal-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.method__word {
+  color: var(--teal-400);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+/* 카드 오른쪽 아래에 깔리는 큰 글자 */
+.method__bg {
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.3em;
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(31, 95, 209, 0.12);
+  pointer-events: none;
+  user-select: none;
+}
+.method__name { position: relative; margin-top: 14px; font-weight: 800; }
+.method__ex { position: relative; margin-top: 4px; color: var(--ink-soft); font-size: 0.92rem; }
 
 .timeline { border-left: 2px solid var(--line); margin-left: 6px; }
 .timeline__item {
@@ -504,8 +538,10 @@ ul, ol { list-style: none; }
   .stats { grid-template-columns: repeat(4, 1fr); }
   .creds { grid-template-columns: repeat(3, 1fr); }
   .method { grid-template-columns: repeat(5, 1fr); }
-  .method__step { padding: 72px 18px 20px; }
-  .method__key { left: 18px; }
+  .method { gap: 14px; }
+  .method__step { padding: 24px 18px 22px; }
+  .method__head { flex-direction: column; gap: 6px; }
+  .method__key { font-size: 3.4rem; }
   .works { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .skill { flex-direction: row; gap: 32px; padding: 28px 32px; }
   .skill__head { flex: 0 0 240px; }
