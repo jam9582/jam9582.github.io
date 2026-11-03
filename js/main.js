@@ -22,10 +22,15 @@
     return wrap;
   }
 
+  // day 가 있으면 "Day 2", 없으면 순서 번호 "02"
+  function label(day, index) {
+    return day ? "Day " + day : String(index + 1).padStart(2, "0");
+  }
+
   function workCard(work, index) {
     const card = el("article", "work");
     const head = el("div", "work__head");
-    head.append(el("span", "work__num", String(index + 1).padStart(2, "0")));
+    head.append(el("span", "work__num", label(work.day, index)));
     if (work.date) head.append(el("span", "work__date", work.date));
     card.append(head, el("h3", "work__title", work.title));
 
@@ -49,10 +54,10 @@
     return card;
   }
 
-  function emptyCard(index) {
+  function emptyCard(day, index) {
     const card = el("article", "work work--empty");
     const head = el("div", "work__head");
-    head.append(el("span", "work__num", String(index + 1).padStart(2, "0")));
+    head.append(el("span", "work__num", label(day, index)));
     const soon = el("p", "work__soon");
     soon.append(icon("clock"), "준비 중 · 곧 추가됩니다");
     card.append(head, soon);
@@ -60,5 +65,9 @@
   }
 
   WORKS.forEach((work, i) => grid.append(workCard(work, i)));
-  for (let i = WORKS.length; i < MIN_SLOTS; i++) grid.append(emptyCard(i));
+  // 빈 칸은 마지막 일차 다음부터 Day 3, Day 4… 로 표시
+  const lastDay = WORKS.reduce((max, w) => Math.max(max, w.day || 0), 0);
+  for (let i = WORKS.length; i < MIN_SLOTS; i++) {
+    grid.append(emptyCard(lastDay ? lastDay + (i - WORKS.length) + 1 : 0, i));
+  }
 })();
