@@ -29,6 +29,24 @@ const WORKS = [
     result: "PC와 휴대폰 모두에서 보이는 포트폴리오를 배포했습니다. AI에게 맡기기 전에 무엇을 보여줄지 먼저 정해야 결과물이 흔들리지 않는다는 것을 배웠습니다.",
     link: "https://jam9582.github.io"
   },
+  {
+    date: "2026-11-03",
+    title: "팀 게임 · 심장이 부릉부릉",
+    problem: "플레이어의 선택에 따라 결말이 달라지는 비주얼 노벨을 팀으로 만들어야 했습니다.",
+    action: "개발을 맡았습니다. 대본 파일을 읽어 화면에 그리는 구조로 만들어, 코드를 몰라도 대본만 고치면 장면이 바뀌게 했습니다. 캐릭터별 호감도와 엔딩 분기도 구현했습니다.",
+    tech: "HTML·CSS·JavaScript, GitHub Pages",
+    result: "캐릭터 선택, 대사 로그, 자동 진행, 엔딩 앨범을 갖춘 게임을 배포했습니다.",
+    link: "https://jam9582.github.io/heart-vroom-vroom/"
+  },
+  {
+    date: "2026-11-03",
+    title: "개인 게임 · 60초 나무꾼",
+    problem: "오전에 프롬프트 6원칙, 게임의 5가지 요소, PRD 작성법을 배운 뒤, 혼자 게임 하나를 끝까지 만들어야 했습니다.",
+    action: "60초 동안 나무를 최대한 많이 쓰러트리는 게임을 만들었습니다. 나무 둘레를 8방향으로 나눠 단단한 쪽과 그 반대편의 약점을 두고, 뒤로 갈수록 나무가 단단해지게 했습니다.",
+    tech: "Three.js(3D), JavaScript, GitHub Pages",
+    result: "PC는 마우스, 휴대폰은 터치로 즐길 수 있고 최고 기록이 저장되는 3D 게임을 배포했습니다.",
+    link: "https://jam9582.github.io/King-of-Lumberjacks/"
+  },
 ];
 
 const MIN_SLOTS = 6;
