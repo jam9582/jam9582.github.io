@@ -41,6 +41,14 @@
       row("사용 기술", work.tech),
       row("결과", work.result)
     );
+    // 체험 방법: 배열의 한 항목이 한 줄
+    if (work.guide && work.guide.length) {
+      const wrap = el("div", "work__row work__row--guide");
+      const dd = el("dd");
+      work.guide.forEach((line) => dd.append(el("p", null, line)));
+      wrap.append(el("dt", null, "체험 방법"), dd);
+      list.append(wrap);
+    }
     card.append(list);
 
     if (work.link) {

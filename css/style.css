@@ -463,6 +463,15 @@ ul, ol { list-style: none; }
 .work__list { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
 .work__row dt { font-size: 0.78rem; font-weight: 700; color: var(--blue-500); }
 .work__row dd { font-size: 0.95rem; color: var(--ink-soft); }
+.work__row--guide dd {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(0, 44, 95, 0.05);
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+.work__row--guide dd p + p { margin-top: 4px; }
 .work__link {
   margin-top: auto;
   padding-top: 18px;
